@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Scanner Code-barres Textile</title>
+    <title>Scanner coût environnemental</title>
     <style>
         * {
             box-sizing: border-box;
@@ -149,26 +149,26 @@
     </style>
 </head>
 <body>
-    <h1>Scanner Code-barres Textile</h1>
-    <p class="subtitle">Scannez un code-barres pour voir son impact environnemental</p>
+    <h1>Scanner coût environnemental</h1>
+    <p class="subtitle">Scannez un code-barres pour voir son coût environnemental</p>
 
     <div id="reader"></div>
 
     <div id="result">
         <div>Code-barres détecté :</div>
         <div class="barcode-value" id="barcode-value"></div>
-        <a id="ecobalyse-link" class="scan-again-btn" href="#" target="_blank">Voir sur Ecobalyse</a>
+        <a id="ecobalyse-link" class="scan-again-btn" href="#" target="_blank">Voir sur affichage-environnemental.ecobalyse</a>
         <button class="scan-again-btn secondary" onclick="scanAgain()">Scanner un autre code</button>
     </div>
 
     <div class="manual-entry">
         <input type="text" id="manual-barcode" placeholder="Ou entrez le code-barres manuellement" pattern="[0-9]*" inputmode="numeric">
-        <button onclick="manualRedirect()">Voir l'impact environnemental</button>
+        <button onclick="manualRedirect()">Voir le coût environnemental</button>
         <div class="error" id="error-msg">Veuillez entrer un code-barres valide</div>
     </div>
 
     <footer>
-        Données : <a href="https://ecobalyse.beta.gouv.fr" target="_blank">Ecobalyse</a>
+        <a href="https://ecobalyse.beta.gouv.fr/" target="_blank">Ecobalyse</a> · <a href="https://affichage-environnemental.ecobalyse.beta.gouv.fr/" target="_blank">Portail de déclaration</a>
     </footer>
 
     <!-- html5-qrcode library - open source barcode/QR scanner -->
