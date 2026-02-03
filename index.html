@@ -63,6 +63,7 @@
             font-size: 0.85rem;
         }
         .scan-again-btn {
+            display: block;
             margin-top: 15px;
             padding: 12px 24px;
             font-size: 1rem;
@@ -72,11 +73,21 @@
             border-radius: 8px;
             cursor: pointer;
             font-weight: 600;
+            text-decoration: none;
+            text-align: center;
             transition: transform 0.2s, background 0.2s;
         }
         .scan-again-btn:hover {
             background: #52e0c4;
             transform: translateY(-2px);
+        }
+        .scan-again-btn.secondary {
+            background: transparent;
+            border: 2px solid #64ffda;
+            color: #64ffda;
+        }
+        .scan-again-btn.secondary:hover {
+            background: rgba(100, 255, 218, 0.1);
         }
         .manual-entry {
             margin-top: 30px;
@@ -146,8 +157,8 @@
     <div id="result">
         <div>Code-barres détecté :</div>
         <div class="barcode-value" id="barcode-value"></div>
-        <div class="redirect-msg">Page Ecobalyse ouverte dans un nouvel onglet</div>
-        <button class="scan-again-btn" onclick="scanAgain()">Scanner un autre code</button>
+        <a id="ecobalyse-link" class="scan-again-btn" href="#" target="_blank">Voir sur Ecobalyse</a>
+        <button class="scan-again-btn secondary" onclick="scanAgain()">Scanner un autre code</button>
     </div>
 
     <div class="manual-entry">
@@ -168,12 +179,11 @@
         function redirectToEcobalyse(barcode) {
             const resultDiv = document.getElementById('result');
             const barcodeValue = document.getElementById('barcode-value');
+            const ecobalyseLink = document.getElementById('ecobalyse-link');
 
             resultDiv.classList.add('show');
             barcodeValue.textContent = barcode;
-
-            // Open Ecobalyse in a new tab
-            window.open(ECOBALYSE_URL + barcode, '_blank');
+            ecobalyseLink.href = ECOBALYSE_URL + barcode;
         }
 
         function scanAgain() {
